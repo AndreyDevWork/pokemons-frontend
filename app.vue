@@ -6,13 +6,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const counter = ref(0);
+const counter = ref(0)
 
 const increaseCounter = () => {
-  counter.value++;
-};
+  counter.value++
+}
 
-const message = "Hello, Vue!";
+const message = 'Hello, Vue!'
 </script>
