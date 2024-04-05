@@ -9,9 +9,13 @@ module.exports = {
     'plugin:vue/vue3-strongly-recommended',
     'plugin:vue/vue3-recommended',
     '@vue/eslint-config-typescript',
-    'airbnb-base',
-    '@vue/eslint-config-prettier/skip-formatting'
+    '@vue/eslint-config-prettier/skip-formatting',
   ],
+  settings: {
+    "import/resolver": {
+      typescript: {}
+    },
+  },
   overrides: [
     {
       files: [
@@ -24,5 +28,8 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
+  },
+  rules: {
+    "import/no-extraneous-dependencies": "off",
+  },
 }
