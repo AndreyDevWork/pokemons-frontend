@@ -1,4 +1,7 @@
 {
+  "app": {
+    "name": "Fluent Flow"
+  },
   "date_of_birth": "Date ofbirth",
   "firstname": "Firstname",
   "lastname": "Zastname",

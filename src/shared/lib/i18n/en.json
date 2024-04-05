@@ -1,8 +1,12 @@
 {
+  "app": {
+    "name": "Fluent Flow"
+  },
   "date_of_birth": "Date de naissance",
   "firstname": "Prénom",
   "lastname": "Nom de famille",
   "username": "Nom d'utilisateur",
   "sign-up": "Sign-up",
-  "create": "Create"
+  "create": "Create",
+  "languages": "langues"
 }
