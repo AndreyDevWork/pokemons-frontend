@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-console.log(import.meta.env.BASE_URL)
+console.log(import.meta.env.VITE_API_URL)
 </script>
 
 <style scoped></style>
