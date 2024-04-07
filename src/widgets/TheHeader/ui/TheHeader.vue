@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { SupportedLocales } from '@/shared/consts/supportedLocales.ts'
-import { useI18n } from 'vue-i18n'
-
-const { locale } = useI18n()
+import { LocaleSwitcher } from '@/features/LocaleSwitcher'
 </script>
 
 <template>
@@ -12,29 +9,7 @@ const { locale } = useI18n()
         <q-toolbar-title>
           {{ $t('app.name') }}
         </q-toolbar-title>
-        <div class="q-pa-md">
-          <q-btn-dropdown
-            outline
-            icon="translate"
-            color="white"
-            :label="locale"
-            dropdown-icon="change_history"
-          >
-            <q-list>
-              <q-item
-                v-for="(value, key) in SupportedLocales"
-                :key="value"
-                v-close-popup
-                clickable
-                @click="locale = key"
-              >
-                <q-item-section>
-                  <q-item-label>{{ value.toUpperCase() }}</q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-list>
-          </q-btn-dropdown>
-        </div>
+        <LocaleSwitcher />
       </q-toolbar>
     </q-header>
   </div>
