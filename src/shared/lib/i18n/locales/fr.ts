@@ -8,6 +8,7 @@ export const fr = {
   firstname: 'Firstname',
   lastname: 'Zastname',
   username: 'Username',
+  password: 'Mot de passe',
   signUp: "S'inscrire",
   signIn: 'Se connecter',
   create: 'Créer',

@@ -8,6 +8,7 @@ export const ru = {
   firstname: 'Имя',
   lastname: 'Фамилия',
   username: 'Имя пользователя',
+  password: 'Пароль',
   signUp: 'Зарегестрироваться',
   signIn: 'Войти',
   create: 'Создать',

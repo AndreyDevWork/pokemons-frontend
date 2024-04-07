@@ -26,10 +26,10 @@ const { locale } = useI18n()
                 :key="value"
                 v-close-popup
                 clickable
-                @click="locale = value"
+                @click="locale = key"
               >
                 <q-item-section>
-                  <q-item-label>{{ key }}</q-item-label>
+                  <q-item-label>{{ value.toUpperCase() }}</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
