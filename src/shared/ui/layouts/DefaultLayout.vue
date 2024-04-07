@@ -12,7 +12,7 @@
     </q-header>
 
     <q-page-container>
-      <div class="container px-3 mx-auto">
+      <div class="container mt-4 px-3 mx-auto">
         <router-view />
       </div>
     </q-page-container>
