@@ -7,5 +7,7 @@ export const fr = {
   lastname: 'Zastname',
   username: 'Username',
   signUp: "S'inscrire",
-  create: 'Créer'
+  signIn: 'Se connecter',
+  create: 'Créer',
+  CreateAccountOnFluentFlow: 'Créer un compte sur Fluent Flow'
 }

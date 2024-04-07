@@ -6,7 +6,9 @@ export const ru = {
   firstname: 'Имя',
   lastname: 'Фамилия',
   username: 'Имя пользователя',
-  signUp: 'Войти',
+  signUp: 'Зарегестрироваться',
+  signIn: 'Войти',
   create: 'Создать',
-  languages: 'Языки'
+  languages: 'Языки',
+  CreateAccountOnFluentFlow: 'Создайте аккаунт на Fluent Flow'
 }
