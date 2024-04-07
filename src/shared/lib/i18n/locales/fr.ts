@@ -11,5 +11,6 @@ export const fr = {
   signUp: "S'inscrire",
   signIn: 'Se connecter',
   create: 'Créer',
+  languages: 'Langages',
   CreateAccountOnFluentFlow: `Créer un compte sur ${appName}`
 }
