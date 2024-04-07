@@ -5,7 +5,7 @@ import { fr } from './locales/fr'
 import { SupportedLocales } from '@/shared/consts/supportedLocales.ts'
 
 export const i18n = createI18n({
-  locale: SupportedLocales.ru,
+  locale: SupportedLocales.en,
   fallbackLocale: SupportedLocales.en,
   legacy: false,
   messages: {

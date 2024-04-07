@@ -4,10 +4,10 @@ export const en = {
   app: {
     name: appName
   },
-  dateOfBirth: 'Date de naissance',
-  firstname: 'Prénom',
-  lastname: 'Nom de famille',
-  username: "Nom d'utilisateur",
+  dateOfBirth: 'Date of birth',
+  firstname: 'Firstname',
+  lastname: 'Lastname',
+  username: 'Username',
   password: 'Password',
   signUp: 'Sign-up',
   signIn: 'Sign-in',
