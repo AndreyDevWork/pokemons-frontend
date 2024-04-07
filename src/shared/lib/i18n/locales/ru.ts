@@ -1,6 +1,8 @@
+const appName = 'Fluent Flow'
+
 export const ru = {
   app: {
-    name: 'Fluent Flow'
+    name: appName
   },
   dateOfBirth: 'День рождения',
   firstname: 'Имя',
@@ -10,5 +12,5 @@ export const ru = {
   signIn: 'Войти',
   create: 'Создать',
   languages: 'Языки',
-  CreateAccountOnFluentFlow: 'Создайте аккаунт на Fluent Flow'
+  CreateAccountOnFluentFlow: `Создайте аккаунт на ${appName}`
 }
