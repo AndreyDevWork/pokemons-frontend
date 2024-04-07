@@ -1,0 +1,6 @@
+@import "quasar/src/css/index.sass";
+@import "@quasar/extras/material-icons/material-icons.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
