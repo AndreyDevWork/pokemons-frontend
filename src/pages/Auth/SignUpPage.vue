@@ -17,6 +17,7 @@
       outlined
       :label="$t('password')"
     />
+    <q-btn color="black" class="full-width mt-3" :label="$t('create')" />
   </div>
 </template>
 
