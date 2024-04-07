@@ -12,7 +12,10 @@
     </q-header>
 
     <q-page-container>
-      <router-view />
+      <div class="container px-3 mx-auto">
+        <router-view />
+      </div>
     </q-page-container>
   </q-layout>
 </template>
+<script setup lang="ts"></script>
