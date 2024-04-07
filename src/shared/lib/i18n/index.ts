@@ -1,18 +1,13 @@
 import { createI18n } from 'vue-i18n'
-const messages = {
-  en: {
-    message: {
-      hello: 'hello world'
-    }
-  },
-  ru: {
-    message: {
-      hello: 'Привет мир'
-    }
-  }
-}
+import en from './en.json'
+import ru from './ru.json'
+import fr from './fr.json'
 
 export const i18n = createI18n({
-  locale: 'ru',
-  messages
+  locale: 'en',
+  messages: {
+    en,
+    ru,
+    fr
+  }
 })
