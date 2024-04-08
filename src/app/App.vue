@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DefaultLayout from '@/shared/ui/layouts/DefaultLayout.vue'
+import DefaultLayout from '@/shared/layouts//DefaultLayout.vue'
 import { TheHeader } from '@/widgets/TheHeader'
 </script>
 
