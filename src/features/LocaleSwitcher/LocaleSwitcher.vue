@@ -3,7 +3,7 @@ import { SupportedLocales } from '@/shared/consts/supportedLocales.ts'
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
-const savedLocale = localStorage.getItem('locale') as SupportedLocales | null
+const savedLocale = localStorage.getItem('locale')
 
 locale.value = savedLocale || SupportedLocales.en
 const switchLocale = (value: SupportedLocales) => {
