@@ -13,9 +13,7 @@ export default class AuthService {
   }
 
   static async signUp(credentials: SignUpRequest): Promise<AxiosResponse<SignUpResponse>> {
-    return api.post<SignUpResponse>('/api/auth/register', {
-      credentials
-    })
+    return api.post<SignUpResponse>('/api/auth/register', credentials)
   }
 
   static logout(): void {
