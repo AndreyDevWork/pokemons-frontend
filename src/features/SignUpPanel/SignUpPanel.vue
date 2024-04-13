@@ -36,18 +36,20 @@ const signUp = () => {
       color="black"
       outlined
       :label="$t('username')"
+      :rules="[(val: string) => !!val || 'Field is required']"
     />
     <q-input
       v-model="signUpData.password"
-      class="mt-3"
+      class="mt-2"
       filled
       color="black"
       outlined
       :label="$t('password')"
+      :rules="[(val: string) => !!val || 'Field is required']"
     />
     <q-btn
       color="black"
-      class="full-width h-14 mt-3"
+      class="full-width h-14 mt-2"
       :label="spinner ? '' : $t('create')"
       :disable="spinner"
       @click="signUp"
