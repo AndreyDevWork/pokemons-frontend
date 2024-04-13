@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import type { SignUpRequest } from '@/shared/types/models/requests/auth/SignUpRequest.ts'
 import AuthService from '@/shared/api/services/AuthService.ts'
 
@@ -8,9 +8,13 @@ const signUpData = reactive<SignUpRequest>({
   password: ''
 })
 
-const signUp = () => {
-  AuthService.signUp(signUpData)
+const signUp = async () => {
+  spinner.value = true
+  await AuthService.signUp(signUpData)
+  spinner.value = false
 }
+
+const spinner = ref(false)
 </script>
 <template>
   <div style="max-width: 400px" class="mx-auto px-5 pt-8 pb-16 rounded-lg bg-white">
@@ -31,6 +35,13 @@ const signUp = () => {
       outlined
       :label="$t('password')"
     />
-    <q-btn color="black" class="full-width mt-3" :label="$t('create')" @click="signUp" />
+    <q-btn
+      color="black"
+      class="full-width h-14 mt-3"
+      :label="spinner ? '' : $t('create')"
+      @click="signUp"
+    >
+      <q-spinner-facebook v-if="spinner" color="white" size="1.8em" />
+    </q-btn>
   </div>
 </template>
