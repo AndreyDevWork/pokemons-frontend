@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SupportedLocales } from '@/shared/consts/supportedLocales.ts'
+import { SupportedLocales } from '@/shared/types/enums/supportedLocales.ts'
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
