@@ -1,8 +1,11 @@
+import { ruValidate } from '@/shared/lib/i18n/locales/validate/ruValidate.ts'
+
 const appName = 'Fluent Flow'
 
 export const ru = {
   app: {
-    name: appName
+    name: appName,
+    validate: ruValidate
   },
   dateOfBirth: 'День рождения',
   firstname: 'Имя',

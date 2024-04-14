@@ -1,8 +1,11 @@
+import { enValidate } from '@/shared/lib/i18n/locales/validate/enValidate.ts'
+
 const appName = 'Fluent Flow'
 
 export const en = {
   app: {
-    name: appName
+    name: appName,
+    validate: enValidate
   },
   dateOfBirth: 'Date of birth',
   firstname: 'Firstname',
