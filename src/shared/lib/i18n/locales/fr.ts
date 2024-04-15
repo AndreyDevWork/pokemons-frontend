@@ -1,4 +1,5 @@
 import { frValidate } from '@/shared/lib/i18n/locales/validate/frValidate.ts'
+import { frBanners } from '@/shared/lib/i18n/locales/banners/frBanners.ts'
 
 const appName = 'Fluent Flow'
 
@@ -7,6 +8,7 @@ export const fr = {
     name: 'Fluent Flow',
     validate: frValidate
   },
+  banners: frBanners,
   dateOfBirth: 'Date de naissance',
   firstname: 'Prénom',
   lastname: 'Nom de famille',

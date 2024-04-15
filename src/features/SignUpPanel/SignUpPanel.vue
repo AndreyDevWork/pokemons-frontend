@@ -3,6 +3,7 @@ import { reactive, ref } from 'vue'
 import type { SignUpRequest } from '@/shared/types/models/requests/auth/SignUpRequest.ts'
 import AuthService from '@/shared/api/services/AuthService.ts'
 import { validate } from '@/shared/validate/vallidate'
+import { i18n } from '@/shared/lib/i18n'
 
 const signUpData = reactive<SignUpRequest>({
   username: '',
@@ -10,16 +11,23 @@ const signUpData = reactive<SignUpRequest>({
 })
 
 const spinner = ref(false)
-const error = ref(false)
+const error = ref<string | boolean>(false)
+const success = ref(false)
 
-const signUp = () => {
+const signUp = async () => {
   spinner.value = true
   AuthService.signUp(signUpData)
     .then(() => {
       error.value = false
+      success.value = true
     })
     .catch(({ response }) => {
-      error.value = response.data.message
+      success.value = false
+      if (response.status === 409) {
+        error.value = i18n.global.t('banners.serverErrors.signUpWithUsername')
+      } else {
+        error.value = response.data.message
+      }
     })
     .finally(() => {
       spinner.value = false
@@ -60,8 +68,16 @@ const signUp = () => {
     >
       <q-spinner-facebook v-if="spinner" color="white" size="1.8em" />
     </q-btn>
-    <q-banner v-if="error" rounded inline-actions class="text-white mt-3 bg-rose-800">
+    <q-banner v-if="error" rounded inline-actions class="text-white text-center mt-3 bg-rose-800">
       {{ error }}
+    </q-banner>
+    <q-banner
+      v-if="success"
+      rounded
+      inline-actions
+      class="text-white text-center mt-3 bg-emerald-900"
+    >
+      {{ $t('banners.successSignUp') }}
     </q-banner>
   </q-form>
 </template>
