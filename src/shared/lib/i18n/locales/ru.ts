@@ -16,6 +16,7 @@ export const ru = {
   password: 'Пароль',
   signUp: 'Зарегестрироваться',
   signIn: 'Войти',
+  toSignIn: 'Перейти на страницу входа',
   create: 'Создать',
   languages: 'Языки',
   CreateAccountOnFluentFlow: `Создайте аккаунт на ${appName}`
