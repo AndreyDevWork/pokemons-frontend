@@ -14,7 +14,7 @@ const spinner = ref(false)
 const error = ref<string | boolean>(false)
 const success = ref(false)
 
-const signUp = async () => {
+const signUp = () => {
   spinner.value = true
   AuthService.signUp(signUpData)
     .then(() => {
