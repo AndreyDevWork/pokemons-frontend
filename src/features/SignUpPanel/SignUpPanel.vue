@@ -63,7 +63,7 @@ const signUp = () => {
         color="black"
         type="submit"
         class="full-width h-14 mt-5"
-        :label="$t('signIn')"
+        :label="$t('create')"
         :spinner="spinner"
       />
     </q-form>

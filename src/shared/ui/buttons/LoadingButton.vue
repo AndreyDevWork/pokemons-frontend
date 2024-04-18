@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <q-btn :label="spinner ? '' : $t('signIn')" :disable="spinner">
+  <q-btn :label="spinner ? '' : label" :disable="spinner">
     <q-spinner-facebook v-if="spinner" color="white" size="1.8em" />
   </q-btn>
 </template>

@@ -20,7 +20,7 @@ export const ru = {
   toSignIn: 'Перейти на страницу входа',
   create: 'Создать',
   languages: 'Языки',
-  CreateAccountOnFluentFlow: `Создайте аккаунт на ${appName}`,
+  createAccountOnFluentFlow: `Создайте аккаунт на ${appName}`,
   firstTimeOnHereCreateAccount: `Впервые на ${appName}? Создайте аккаунт`,
   alreadyRegistered: 'Уже есть учетная запись? Войти'
 }
