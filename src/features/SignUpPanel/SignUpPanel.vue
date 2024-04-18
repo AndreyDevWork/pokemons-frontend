@@ -40,7 +40,7 @@ const signUp = () => {
 <template>
   <div style="max-width: 400px" class="mx-auto px-5 pt-8 pb-10 rounded-lg bg-white">
     <q-form v-if="!isSuccess" @submit="signUp">
-      <h1 class="text-4xl">{{ $t('CreateAccountOnFluentFlow') }}</h1>
+      <h1 class="text-4xl">{{ $t('createAccountOnFluentFlow') }}</h1>
       <q-input
         v-model="signUpData.username"
         class="mt-3"
@@ -70,5 +70,10 @@ const signUp = () => {
 
     <ServerErrorBanner :error="error" />
     <SuccessSignUp :is-success="isSuccess" />
+    <RouterLink to="/sign-in">
+      <q-banner rounded inline-actions class="text-white text-center mt-3 bg-cyan-800">
+        {{ $t('alreadyRegistered') }}
+      </q-banner>
+    </RouterLink>
   </div>
 </template>

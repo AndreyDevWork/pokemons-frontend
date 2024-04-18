@@ -39,7 +39,7 @@ const signUp = () => {
 <template>
   <div style="max-width: 400px" class="mx-auto px-5 pt-8 pb-10 rounded-lg bg-white">
     <q-form v-if="!isSuccess" @submit="signUp">
-      <h1 class="text-4xl text-center">{{ $t('signIn') }}</h1>
+      <h1 class="text-4xl text-center">{{ $t('enterInAccount') }}</h1>
       <q-input
         v-model="signUpData.username"
         class="mt-3"
@@ -67,6 +67,11 @@ const signUp = () => {
       />
     </q-form>
 
+    <RouterLink to="/sign-up">
+      <q-banner rounded inline-actions class="text-white text-center mt-3 bg-cyan-800">
+        {{ $t('firstTimeOnHereCreateAccount') }}
+      </q-banner>
+    </RouterLink>
     <ServerErrorBanner :error="error" />
   </div>
 </template>

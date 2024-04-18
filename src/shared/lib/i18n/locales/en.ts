@@ -16,8 +16,11 @@ export const en = {
   password: 'Password',
   signUp: 'Sign up',
   signIn: 'Sign in',
+  enterInAccount: 'Sign in',
   toSignIn: 'Go to login page',
   create: 'Create',
-  languages: 'langues',
-  CreateAccountOnFluentFlow: `Create an account on ${appName}`
+  languages: 'languages',
+  createAccountOnFluentFlow: `Create an account on ${appName}`,
+  firstTimeOnHereCreateAccount: `New to ${appName}? Create an account`,
+  alreadyRegistered: 'Already have an account? Sign in'
 }
