@@ -37,7 +37,7 @@ const signUp = () => {
 }
 </script>
 <template>
-  <div style="max-width: 400px" class="mx-auto px-5 pt-8 pb-10 rounded-lg bg-white">
+  <div style="max-width: 400px" class="mx-auto px-5 pt-7 pb-10 rounded-lg bg-white">
     <q-form v-if="!isSuccess" @submit="signUp">
       <h1 class="text-4xl text-center">{{ $t('enterInAccount') }}</h1>
       <q-input
