@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { SignInPanel } from '@/features/SignInPanel'
+</script>
 
 <template>
-  <div>Вход</div>
+  <SignInPanel />
 </template>

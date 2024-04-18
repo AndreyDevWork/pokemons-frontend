@@ -4,7 +4,6 @@ import type { SignUpRequest } from '@/shared/types/models/requests/auth/SignUpRe
 import AuthService from '@/shared/api/services/AuthService.ts'
 import { validate } from '@/shared/validate/vallidate'
 import { i18n } from '@/shared/lib/i18n'
-import { SuccessSignUp } from '@/entities/Auth/SuccessSignUp'
 import { ServerErrorBanner } from '@/shared/ui/banners'
 import { LoadingButton } from '@/shared/ui/buttons'
 
@@ -40,7 +39,7 @@ const signUp = () => {
 <template>
   <div style="max-width: 400px" class="mx-auto px-5 pt-8 pb-10 rounded-lg bg-white">
     <q-form v-if="!isSuccess" @submit="signUp">
-      <h1 class="text-4xl">{{ $t('CreateAccountOnFluentFlow') }}</h1>
+      <h1 class="text-4xl text-center">{{ $t('signIn') }}</h1>
       <q-input
         v-model="signUpData.username"
         class="mt-3"
@@ -69,6 +68,5 @@ const signUp = () => {
     </q-form>
 
     <ServerErrorBanner :error="error" />
-    <SuccessSignUp :is-success="isSuccess" />
   </div>
 </template>
