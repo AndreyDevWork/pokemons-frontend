@@ -8,5 +8,10 @@ export const routes: RouterOptions['routes'] = [
     meta: {
       requiresAuth: false
     }
+  },
+  {
+    path: '/sign-in',
+    name: 'sign-in',
+    component: () => import('@/pages/Auth/SignInPage')
   }
 ]

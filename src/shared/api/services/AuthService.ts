@@ -1,9 +1,7 @@
 import api from '@/shared/api/axiosInstance.ts'
 import type { AxiosResponse } from 'axios'
-import type { SignInResponse } from '@/shared/types/models/responses/SignInResponse.ts'
-import type { SignUpResponse } from '@/shared/types/models/responses/SignUpResponse.ts'
-import type { SignInRequest } from '@/shared/types/models/requests/auth/SignInRequest.ts'
-import type { SignUpRequest } from '@/shared/types/models/requests/auth/SignUpRequest.ts'
+import type { SignInResponse, SignUpResponse } from '@/shared/types/models/responses/auth'
+import type { SignInRequest, SignUpRequest } from '@/shared/types/models/requests/auth'
 
 export default class AuthService {
   static async signIn(credentials: SignInRequest): Promise<AxiosResponse<SignInResponse>> {
