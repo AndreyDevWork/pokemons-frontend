@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia'
+import AuthService from '@/shared/api/services/AuthService.ts'
 
-export const useProfileStore = defineStore('counter', {
+export const useProfileStore = defineStore('profile', {
   state: () => {
     return {
-      isAuthenticated: false
+      isAuthenticated: AuthService.isAuth()
     }
   }
 })
