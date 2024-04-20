@@ -5,9 +5,7 @@ import type { SignInRequest, SignUpRequest } from '@/shared/types/models/request
 
 export default class AuthService {
   static async signIn(credentials: SignInRequest): Promise<AxiosResponse<SignInResponse>> {
-    return api.post<SignInResponse>('/oauth/token', {
-      credentials
-    })
+    return api.post<SignInResponse>('/oauth/token', credentials)
   }
 
   static async signUp(credentials: SignUpRequest): Promise<AxiosResponse<SignUpResponse>> {
