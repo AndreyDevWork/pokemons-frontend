@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { LocaleSwitcher } from '@/features/LocaleSwitcher'
+import { TheLogout } from '@/features/TheLogout'
 </script>
 
 <template>
@@ -8,7 +9,10 @@ import { LocaleSwitcher } from '@/features/LocaleSwitcher'
       <q-toolbar-title>
         {{ $t('app.name') }}
       </q-toolbar-title>
-      <LocaleSwitcher />
+      <div class="flex gap-x-2.5 py-4">
+        <LocaleSwitcher />
+        <TheLogout></TheLogout>
+      </div>
     </q-toolbar>
   </q-header>
 </template>

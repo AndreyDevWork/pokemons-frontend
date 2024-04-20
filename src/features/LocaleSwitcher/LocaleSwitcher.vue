@@ -12,7 +12,7 @@ const switchLocale = (value: SupportedLocales) => {
 }
 </script>
 <template>
-  <div class="py-4">
+  <div>
     <q-btn-dropdown
       outline
       icon="translate"

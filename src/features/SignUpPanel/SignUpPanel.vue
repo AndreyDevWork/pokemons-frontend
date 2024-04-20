@@ -4,7 +4,7 @@ import type { SignUpRequest } from '@/shared/types/models/requests/auth/SignUpRe
 import AuthService from '@/shared/api/services/AuthService.ts'
 import { validate } from '@/shared/validate/vallidate'
 import { i18n } from '@/shared/lib/i18n'
-import { SuccessSignUp } from '@/entities/Auth/SuccessSignUp'
+import SuccessSignUp from '@/features/SignUpPanel/components/SuccessSignUp.vue'
 import { ServerErrorBanner } from '@/shared/ui/banners'
 import { LoadingButton } from '@/shared/ui/buttons'
 
@@ -70,7 +70,7 @@ const signUp = () => {
 
     <ServerErrorBanner :error="error" />
     <SuccessSignUp :is-success="isSuccess" />
-    <RouterLink to="/sign-in">
+    <RouterLink v-if="!isSuccess" to="/sign-in">
       <q-banner rounded inline-actions class="text-white text-center mt-3 bg-cyan-800">
         {{ $t('alreadyRegistered') }}
       </q-banner>

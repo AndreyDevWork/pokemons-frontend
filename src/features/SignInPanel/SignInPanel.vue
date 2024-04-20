@@ -1,32 +1,40 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
-import type { SignUpRequest } from '@/shared/types/models/requests/auth/SignUpRequest.ts'
+import type { SignInRequest } from '@/shared/types/models/requests/auth/SignInRequest.ts'
 import AuthService from '@/shared/api/services/AuthService.ts'
 import { validate } from '@/shared/validate/vallidate'
 import { i18n } from '@/shared/lib/i18n'
 import { ServerErrorBanner } from '@/shared/ui/banners'
 import { LoadingButton } from '@/shared/ui/buttons'
+import { useRouter } from 'vue-router'
+import { useProfileStore } from '@/shared/store/profile.ts'
 
-const signUpData = reactive<SignUpRequest>({
+const profileStore = useProfileStore()
+const signInData = reactive<SignInRequest>({
+  grant_type: 'password',
+  client_id: import.meta.env.VITE_CLIENT_ID,
+  client_secret: import.meta.env.VITE_CLIENT_SECRET,
   username: '',
   password: ''
 })
 
+const router = useRouter()
 const spinner = ref(false)
 const error = ref<string | boolean>(false)
 const isSuccess = ref(false)
 
 const signUp = () => {
   spinner.value = true
-  AuthService.signUp(signUpData)
-    .then(() => {
-      error.value = false
-      isSuccess.value = true
+  AuthService.signIn(signInData)
+    .then(({ data }) => {
+      localStorage.setItem('ACCESS_TOKEN', data.access_token)
+      profileStore.isAuthenticated = true
+      router.push({ path: `/profile/${AuthService.getTokenDecode().sub}` })
     })
     .catch(({ response }) => {
       isSuccess.value = false
-      if (response.status === 409) {
-        error.value = i18n.global.t('banners.serverErrors.signUpWithUsername')
+      if (response.status === 401) {
+        error.value = i18n.global.t('banners.serverErrors.wrongLoginOrPassword')
       } else {
         error.value = response.data.message
       }
@@ -41,7 +49,7 @@ const signUp = () => {
     <q-form v-if="!isSuccess" @submit="signUp">
       <h1 class="text-4xl text-center">{{ $t('enterInAccount') }}</h1>
       <q-input
-        v-model="signUpData.username"
+        v-model="signInData.username"
         class="mt-3"
         filled
         color="black"
@@ -50,7 +58,7 @@ const signUp = () => {
         :rules="validate.required"
       />
       <q-input
-        v-model="signUpData.password"
+        v-model="signInData.password"
         class="mt-2"
         filled
         color="black"
