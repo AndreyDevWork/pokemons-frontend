@@ -6,7 +6,7 @@ import { validate } from '@/shared/validate/vallidate'
 import { i18n } from '@/shared/lib/i18n'
 import { ServerErrorBanner } from '@/shared/ui/banners'
 import { LoadingButton } from '@/shared/ui/buttons'
-import { jwtDecode } from 'jwt-decode'
+import { useRouter } from 'vue-router'
 
 const signInData = reactive<SignInRequest>({
   grant_type: 'password',
@@ -16,6 +16,7 @@ const signInData = reactive<SignInRequest>({
   password: ''
 })
 
+const router = useRouter()
 const spinner = ref(false)
 const error = ref<string | boolean>(false)
 const isSuccess = ref(false)
@@ -25,6 +26,7 @@ const signUp = () => {
   AuthService.signIn(signInData)
     .then(({ data }) => {
       localStorage.setItem('ACCESS_TOKEN', data.access_token)
+      router.push({ path: `/profile/${AuthService.getTokenDecode().sub}` })
     })
     .catch(({ response }) => {
       isSuccess.value = false

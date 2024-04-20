@@ -2,6 +2,8 @@ import api from '@/shared/api/axiosInstance.ts'
 import type { AxiosResponse } from 'axios'
 import type { SignInResponse, SignUpResponse } from '@/shared/types/models/responses/auth'
 import type { SignInRequest, SignUpRequest } from '@/shared/types/models/requests/auth'
+import { LocalStorage } from 'quasar'
+import { jwtDecode, type JwtPayload } from 'jwt-decode'
 
 export default class AuthService {
   static async signIn(credentials: SignInRequest): Promise<AxiosResponse<SignInResponse>> {
@@ -13,6 +15,18 @@ export default class AuthService {
   }
 
   static logout(): void {
-    console.log('LOGOUT')
+    LocalStorage.remove('ACCESS_TOKEN')
+  }
+
+  static isAuth(): boolean {
+    return !!LocalStorage.getItem<boolean>('ACCESS_TOKEN')
+  }
+
+  static getToken(): string {
+    return LocalStorage.getItem<string>('ACCESS_TOKEN') || ''
+  }
+
+  static getTokenDecode(): JwtPayload {
+    return jwtDecode(this.getToken())
   }
 }
