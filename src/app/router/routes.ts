@@ -13,5 +13,10 @@ export const routes: RouterOptions['routes'] = [
     path: '/sign-in',
     name: 'sign-in',
     component: () => import('@/pages/Auth/SignInPage')
+  },
+  {
+    path: '/profile/:id',
+    name: 'profile',
+    component: () => import('@/pages/Profile/ProfilePage')
   }
 ]
