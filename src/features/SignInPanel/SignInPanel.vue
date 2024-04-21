@@ -7,7 +7,7 @@ import { i18n } from '@/shared/lib/i18n'
 import { ServerErrorBanner } from '@/shared/ui/banners'
 import { LoadingButton } from '@/shared/ui/buttons'
 import { useRouter } from 'vue-router'
-import { useProfileStore } from '@/shared/store/profile.ts'
+import { useProfileStore } from '@/shared/store/profile/profile.ts'
 
 const profileStore = useProfileStore()
 const signInData = reactive<SignInRequest>({
@@ -29,7 +29,7 @@ const signUp = () => {
     .then(({ data }) => {
       localStorage.setItem('ACCESS_TOKEN', data.access_token)
       profileStore.isAuthenticated = true
-      router.push({ path: `/profile/${AuthService.getTokenDecode().sub}` })
+      router.push({ path: `/profile/${AuthService.getAccessTokenDecode().sub}` })
     })
     .catch(({ response }) => {
       isSuccess.value = false

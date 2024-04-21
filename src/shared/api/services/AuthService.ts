@@ -22,11 +22,11 @@ export default class AuthService {
     return !!LocalStorage.getItem<boolean>('ACCESS_TOKEN')
   }
 
-  static getToken(): string {
+  static getAccessToken(): string {
     return LocalStorage.getItem<string>('ACCESS_TOKEN') || ''
   }
 
-  static getTokenDecode(): JwtPayload {
-    return jwtDecode(this.getToken())
+  static getAccessTokenDecode(): JwtPayload {
+    return jwtDecode(this.getAccessToken())
   }
 }

@@ -15,7 +15,7 @@ router.beforeEach((to, from, next) => {
     })
   } else if ((to.path === '/sign-in' || to.path === '/sign-up') && AuthService.isAuth()) {
     next({
-      path: `/profile/${AuthService.getTokenDecode().sub}`
+      path: `/profile/${AuthService.getAccessTokenDecode().sub}`
     })
   }
 
