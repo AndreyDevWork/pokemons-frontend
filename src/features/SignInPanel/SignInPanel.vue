@@ -7,7 +7,7 @@ import { i18n } from '@/shared/lib/i18n'
 import { ServerErrorBanner } from '@/shared/ui/banners'
 import { LoadingButton } from '@/shared/ui/buttons'
 import { useRouter } from 'vue-router'
-import { useProfileStore } from '@/shared/store/profile/profile.ts'
+import { useProfileStore } from '@/entities/store/profile/profile.ts'
 
 const profileStore = useProfileStore()
 const signInData = reactive<SignInRequest>({
