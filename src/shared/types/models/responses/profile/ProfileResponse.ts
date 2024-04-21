@@ -4,7 +4,7 @@ interface User {
   email: string
 }
 
-export interface Profile {
+export interface ProfileResponse {
   date_of_birth: string
   firstname: string
   lastname: string

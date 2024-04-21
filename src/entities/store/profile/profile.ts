@@ -1,6 +1,5 @@
 import { defineStore, type StoreDefinition } from 'pinia'
 import AuthService from '@/shared/api/services/AuthService.ts'
-
 interface User {
   id: number
   username: string

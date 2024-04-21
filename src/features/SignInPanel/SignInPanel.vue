@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import type { SignInRequest } from '@/shared/types/models/requests/auth/SignInRequest.ts'
-import AuthService from '@/shared/api/services/AuthService.ts'
+import { AuthService } from '@/shared/api/services'
 import { validate } from '@/shared/validate/vallidate'
 import { i18n } from '@/shared/lib/i18n'
 import { ServerErrorBanner } from '@/shared/ui/banners'
